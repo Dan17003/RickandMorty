@@ -6,9 +6,8 @@ import Image from "next/image";
 
 async function getPokemons(): Promise<SimplePokemon[]> {
 
-
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151", {
-    next: { revalidate: 86400 }, // Revalida cada 24 horas
+    next: { revalidate: 86400 },
   });
 
   if (!res.ok) throw new Error("Error al cargar pokémon");
